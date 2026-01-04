@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bishal | YCSAS Portfolio</title>
+
+<style>
+:root{
+    --primary:#ff4d4d;
+    --secondary:#ff8c00;
+    --accent:#ff4da6;
+    --bg:#fff5f5;
+    --text:#333;
+    --card:#ffffffee;
+    --gradient:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));
+}
+
+.dark-mode{
+    --bg:#120808;
+    --text:#ffe6e6;
+    --card:#241414;
+}
+
+*{
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    transition:0.4s;
+}
+
+header{
+    background:var(--gradient);
+    padding:90px 20px;
+    text-align:center;
+    color:#fff;
+    clip-path:polygon(0 0,100% 0,100% 85%,0 100%);
+}
+
+header h1{
+    font-size:3.2rem;
+    margin:0;
+}
+
+header p{
+    font-size:1.2rem;
+    opacity:.9;
+}
+
+.container{
+    max-width:900px;
+    margin:-60px auto 60px;
+    padding:20px;
+}
+
+.box{
+    background:var(--card);
+    padding:30px;
+    margin-bottom:30px;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.1);
+    border-left:6px solid var(--accent);
+    animation:fadeUp .8s ease;
+}
+
+.box h2{
+    margin-top:0;
+    font-size:1.6rem;
+    background:var(--gradient);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.skill{
+    background:var(--gradient);
+    color:#fff;
+    padding:6px 18px;
+    border-radius:20px;
+    font-size:.85rem;
+    font-weight:600;
+}
+
+ul{
+    padding-left:20px;
+}
+
+.mode-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    border:none;
+    font-size:20px;
+    cursor:pointer;
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    z-index:999;
+}
+
+.contact a{
+    color:var(--primary);
+    text-decoration:none;
+    font-weight:600;
+}
+
+.contact a:hover{
+    text-decoration:underline;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(25px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@media(max-width:600px){
+    header h1{font-size:2.4rem;}
+}
+</style>
+</head>
+
+<body>
+
+<button class="mode-btn" onclick="toggleMode()" id="btn">🌙</button>
+
+<header>
+    <h1>YCSAS</h1>
+    <p>Web Development Intern @ YCSAS(BISHAL)</p>
+</header>
+
+<div class="container">
+
+    <section class="box">
+        <h2>👋 About Me</h2>
+        <p>
+            I am a <strong>CST student</strong> in Central Calcutta Polytechnic with a strong interest in modern web development.
+            Currently interning at <strong>YCSAS</strong>, where I build responsive, interactive,
+            and professional web interfaces.
+        </p>
+    </section>
+
+    <section class="box">
+        <h2>🛠 Skills</h2>
+        <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">React</span>
+        </div>
+    </section>
+
+    <section class="box">
+        <h2>🎓 YCSAS Internship</h2>
+        <p><strong>Web Development Internship</strong></p>
+        <p>
+            Learned DOM manipulation, responsive layouts, portfolio structuring,
+            and real-world frontend development practices.
+        </p>
+    </section>
+
+    <section class="box">
+        <h2>🚀 Projects</h2>
+        <ul>
+            <li><strong>Modern Portfolio</strong> – Animated theme-based website</li>
+            <li><strong>Student Hub</strong> – Data entry & display system</li>
+            <li><strong>Form Validator</strong> – JavaScript validation logic</li>
+        </ul>
+    </section>
+
+    <section class="box contact" style="text-align:center">
+        <h2>📩 Contact</h2>
+        <p>Email: <a href="mailto:yourname@gmail.com">bishal@gmail.com</a></p>
+      
+    </section>
+
+</div>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("dark-mode");
+    document.getElementById("btn").innerHTML =
+        document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+}
+</script>
+
+</body>
+</html>
